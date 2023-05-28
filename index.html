@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Graphic Designing Services</title>
+  <style>
+    /* Add CSS styles for designing */
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+      font-size: 32px;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      color: #555;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: "Arial", sans-serif;
+      font-size: 14px;
+    }
+    .error-message {
+      color: red;
+      margin-top: 5px;
+      font-size: 12px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: "Arial", sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Creative Designs that Captivate</h1>
+  <h2>Graphic Design Services</h2>
+
+  <div class="form-container">
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <div id="nameError" class="error-message"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Contact No.:</label>
+        <input type="text" id="contact" name="contact" placeholder="Enter your contact number" required>
+        <div id="contactError" class="error-message"></div>
+      </div>
+
+      <button type="submit">Get Started</button>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript for form validation
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting
+
+      var nameInput = document.getElementById('name');
+      var contactInput = document.getElementById('contact');
+      var nameError = document.getElementById('nameError');
+      var contactError = document.getElementById('contactError');
+
+      // Clear any previous error messages
+      nameError.textContent = '';
+      contactError.textContent = '';
+
+      // Validate name field
+      if (nameInput.value.trim() === '') {
+        nameError.textContent = 'Name is required';
+        nameInput.focus();
+        return false;
+      }
+
+      // Validate contact number field
+      if (contactInput.value.trim() === '') {
+        contactError.textContent = 'Contact number is required';
+        contactInput.focus();
+        return false;
+      }
+
+      // Form is valid, you can perform further actions here
+      // For example, you can submit the form using AJAX or redirect to another page
+      alert('Form submitted successfully!');
+      // Uncomment the following line to submit the form
+      // document.getElementById('contactForm').submit();
+    });
+  </script>
+</body>
+</html>
